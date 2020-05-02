@@ -1,0 +1,462 @@
+@charset "ISO-8859-1";
+* {
+      box-sizing: border-box;
+    }
+
+    input[type=text],
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      font-family: 'Candara';
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      resize: vertical;
+    }
+
+    input:hover[type=text],
+    select,
+    textarea {
+      border-color: #1e4a6d;
+      border-width: 1px;
+    }
+
+    input[type=text].focus {
+      background-color: #1e4a6d;
+    }
+
+    input[type=number],
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      font-family: 'Candara';
+      border-radius: 4px;
+      resize: vertical;
+    }
+
+    input:hover[type=number],
+    select,
+    textarea {
+      border-color: #1e4a6d;
+      border-width: 1px;
+    }
+
+    input[type=date],
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      font-family: 'Candara';
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      height: 41.5px;
+      resize: vertical;
+    }
+
+    input:hover[type=date],
+    select,
+    textarea {
+      border-color: #1e4a6d;
+      border-width: 1px;
+    }
+
+    .card {
+  box-shadow: 0 1px 2px 0 rgba(0, 1, 1, 0.7);
+  background-image: linear-gradient(to bottom right, #1e4a6d, #2c6ca0);
+  display:block;
+  padding-top:10px;
+  width: 19.75%;
+  margin: 0;
+  text-align: center;
+  font-family: arial;
+  float:left;
+  height:300px;
+  
+}
+
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 1, 1, 0.7);
+   
+}
+
+.avatar {
+  display: block;
+  width: 120px;
+  height: 120px;
+  border-radius: 60%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.avatar img {
+  width: 100%;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+    label {
+      padding: 12px 12px 12px 12px;
+      display: inline-block;
+      font-family: 'Candara';
+      font-size: 14px;
+    }
+
+    input[type=submit] {
+      background-color: #4CAF50;
+      color: white;
+      margin: 0;
+      font-family: 'Candara';
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      float: left;
+      margin: 10px;
+    }
+
+
+
+    input[type=submit]:hover {
+      background-color: #45a049;
+    }
+
+    .container {
+      border-radius: 5px;
+      background-color: #1e4a6d;
+      padding: 3%;
+      width: 100%;
+      height: 1100px;
+    }
+
+    div.PageHeader {
+      padding: 10px;
+      padding-bottom: 10px;
+      padding-left: 10px;
+      padding-right: 10px;
+      background-color: #e6e6ff;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.19);
+      /*    border: 1px solid black; */
+      float: right;
+      width: 79.75%;
+      margin-left: 0;
+      margin-right: 0;
+      margin-bottom: 0.5%;
+      height: 148px;
+      /* content: ""; */
+      /* display: table; */
+      /* clear: both; */
+    }
+
+    PageHeader:after {
+
+       content: ""; 
+      display: table;
+       clear: both;
+
+    }
+
+    div.NavigationLeft {
+      background-color: #e6e6ff;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.19);
+      margin-top: 0.5%;
+      padding-top: 20px;
+      padding-left: 10px;
+      padding-right: 10px;
+      /* border-right: 1px solid black;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black; */
+      height: 400px;
+      width: 19.75%;
+      float: left;
+    }
+
+    div.ReportsPaneLeft {
+      background-color: #e6e6ff;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.19);
+      margin-top: 0.5%;
+      padding-top: 20px;
+      padding-left: 10px;
+      padding-right: 10px;
+      height: 291px;
+      width: 19.75%;
+      float: left;
+    }
+
+    div.MainPane {
+      background-color: #e6e6ff;
+      background-image: linear-gradient(to bottom right, #e6e6ff, white);
+      border-radius: 5px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.19);
+      margin: 0;
+      padding: 20px;
+      /*    border-right: 1px solid black;
+   border-left: 1px solid black;   
+    border-bottom: 1px solid black; */
+      height: 850px;
+      width: 79.75%;
+      float: right;
+
+    }
+
+    .col-6 {
+      float: left;
+      width: 6.25%;
+      margin-top: 6px;
+    }
+
+    .col-15 {
+      float: left;
+      width: 15%;
+      margin-top: 6px;
+    }
+
+    .col-30 {
+      float: left;
+      width: 30%;
+      margin-top: 6px;
+    }
+
+    .col-33 {
+      float: left;
+      width: 33.33%;
+      margin-top: 6px;
+    }
+
+    .col-37 {
+      float: left;
+      width: 37.5%;
+      margin-top: 6px;
+    }
+
+    .col-25 {
+      float: left;
+      width: 25%;
+      margin-top: 6px;
+    }
+
+    .col-75 {
+      float: left;
+      width: 75%;
+      margin-top: 6px;
+    }
+
+    .button {
+      background-color: #4CAF50;
+      /* Green */
+      border: none;
+      border-radius: 5px;
+      color: white;
+      padding: 3px 3px;
+      padding-right: 5%;
+      text-align: left;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 14px;
+      font-family: 'Candara';
+      margin: 2px 2px;
+      transition-duration: 0.4s;
+      cursor: pointer;
+      height: 20px;
+      width: 100%;
+      
+    }
+
+    .button1 {
+      background-color: #e6e6ff;
+      color: black;
+      /*border: 2px solid #4CAF50;*/
+    }
+
+    .button1:hover {
+      background-color: #ccccff;
+      color: #000080;
+    }
+
+    .button1:active {
+      background-color: #1e4a6d;
+      color: #ccccff;
+    }
+
+    .button1:focus {
+      background-color: #1e4a6d;
+      color: #ccccff;
+    }
+
+    .button2 {
+      background-color: #1e4a6d;
+      /* Green */
+      border: none;
+      border-radius: 5px;
+      color: white;
+      padding: 3px 3px;
+      padding-right: 5%;
+      text-align: left;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 12px;
+      font-family: 'Candara';
+      margin: 2px 2px;
+      transition-duration: 0.4s;
+      cursor: pointer;
+      height: 20px;
+      width: 50%;
+      text-align: center;
+    }
+
+    .button2:hover {
+      background-color:rgb(14, 196, 14);
+      color: #000080;
+    }
+
+    .columnHeader {
+  float: left;
+  width: 16.5%;
+  padding: 0 10px;
+}
+
+
+    .buttonHeader {
+      background-color: #1e4a6d;
+      /* Green */
+      border:none;
+      border-radius: 5px;
+      color: white;
+      /* padding: 3px 3px; */
+      /* padding-right: 2%; */
+      text-align: left;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 14px;
+      font-family: 'Candara';
+      /* margin: 2px 2px; */
+      margin-left: 3%;
+      margin-top: 3%;
+      transition-duration: 0.4s;
+      cursor: pointer;
+      height: 120px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 1px 2px 0 rgba(0, 1, 1, 0.7);
+      
+    }
+
+    .buttonHeader:hover {
+      /* background-color:rgb(14, 196, 14); */
+      color: rgb(14, 196, 14);
+      background-color: #10283c;
+      box-shadow: 0 4px 8px 0 rgba(0, 1, 1, 0.7);
+    }
+
+    /* .button2:active {
+      background-color: green;
+      color: #ccccff;
+    }
+
+    .button2:focus {
+      background-color: green;
+      color: #ccccff;
+    } */
+    /* Code for custom radio button - starts */
+
+    /* The container_radio */
+    .container_radio {
+      display: block;
+      position: relative;
+      padding-left: 0;
+      padding-top: 18px;
+      margin-bottom: 0;
+      cursor: pointer;
+      font-size: 22px;
+      height: 40px;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    /* Hide the browser's default radio button */
+    .container_radio input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    /* Create a custom radio button */
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 25px;
+      width: 25px;
+      background-color: #1e4a6d;
+      border-radius: 50%;
+
+    }
+
+    /* On mouse-over, add a grey background color */
+    .container_radio:hover input~.checkmark {
+      background-color: #ccc;
+    }
+
+    /* When the radio button is checked, add a blue background */
+    .container_radio input:checked~.checkmark {
+      background-color: #1e4a6d;
+    }
+
+    /* Create the indicator (the dot/circle - hidden when not checked) */
+    .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+
+    /* Show the indicator (dot/circle) when checked */
+    .container_radio input:checked~.checkmark:after {
+      display: block;
+    }
+
+    /* Style the indicator (dot/circle) */
+    .container_radio .checkmark:after {
+      top: 9px;
+      left: 9px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: white;
+    }
+
+    /* Code for custom radio button - stops */
+
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+
+      .col-25,
+      .col-75,
+      input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+      }
+    }

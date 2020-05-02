@@ -1,0 +1,31 @@
+@charset "ISO-8859-1";
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th {
+  text-align: left;
+  padding: 16px;
+  background-color: #1e4a6d;
+  color: #f2f2f2;
+  font-family: "candara";
+  font-size: 16px;
+}
+
+td {
+  text-align: left;
+  padding: 16px;
+  font-family: "candara";
+  font-size: 14px;
+  
+}
+
+tr:nth-child(even) {
+  background-color: #ccccff;
+  font-family: "candara";
+  font-size: 14px;
+}
