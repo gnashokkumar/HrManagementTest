@@ -63,10 +63,22 @@
 
 		<div class="MainPane" id="EEMasterLandingPage">
 			<p>
-				<font face="Candara">Landing Page</font>
+				<font face="Candara">Landing Page</font> </p>
 				
-<div>
+			<p>	
+			
+			<button class="button_hr" id="btnAjaxCall" value="Ajax Call" >Find Employees</button>
+			
+		<!-- 	<input type="number" name="emp_id_search" placeholder="EE number"/>   -->
+			
+			<button class="button_hr" >Edit Information</button>
+			
+			</p>
+				
+				
+
 <table>
+<thead>
   <tr>
     <th> Select </th>
     <th>Employee Number</th>
@@ -77,39 +89,21 @@
 	<th>Pay Start Date</th>
 	<th>Country</th>
   </tr>
-  <tr>
-    <td><input type="radio" name="EmployeeGrid"> </input></td>
-    <td>Jill</td>
-    <td>Smith</td>
-    <td>50</td>
-	<td></td>
-	<td></td>
-	<td></td>
-	<td></td>
-  </tr>
-  <tr>
-    <td><input type="radio" name="EmployeeGrid"> </input></td>
-    <td>Eve</td>
-    <td>Jackson</td>
-    <td>94</td>
-	<td></td>
-	<td></td>
-	<td></td>
-	<td></td>
-  </tr>
-  <tr>
-    <td><input type="radio" name="EmployeeGrid"> </input></td>
-    <td>Adam</td>
-    <td>Johnson</td>
-    <td>67</td>
-	<td></td>
-	<td></td>
-	<td></td>
-	<td></td>
-  </tr>
+  </thead>
+  <tbody class="display-data">
+  <!--  <div class="display-data"> -->
+  
+  <!-- Ajax call comes here -->
+  
+  <!--  </div>  -->
+  </tbody>
+  
+  <tfoot>
+  
+  </tfoot>
 </table>
-</div>
-			</p>
+
+	
 		</div>
 
 
@@ -162,4 +156,55 @@
 	</div>
 	<!-- Closing container div tag-->
 </body>
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"
+			  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+			  crossorigin="anonymous"></script>
+			  
+<script>
+	var count = 0;
+	
+	$("#btnAjaxCall").click(function(){
+		fetchDataAndDisplay();
+	});
+	
+	function fetchDataAndDisplay(){
+		$.ajax({
+			url:"QueryEmployeeBasicInfo",
+			method:"GET"
+		}).done(function(data){
+	//		var start = count > 0 ? 5 * count : count;
+	//		var end = start + 5;
+			var str = '';
+			for(var i=1; i<data.length; i++){
+				str += 	'<tr>'+
+							'<td><input type="radio" name="EmployeeGrid"> </input></td>' +
+								'<td>' + data[i].emp_id + '</td>' +
+							'<td>' + data[i].emp_alpha_name + '</td>' +
+							'<td>' + data[i].legal_entity + '</td>' +
+							'<td>' + data[i].emp_pay_status + '</td>' +
+							'<td>' + data[i].emp_ben_status + '</td>' +
+							'<td>' + '</td>' +
+							'<td>' + data[i].emp_country + '</td>' +
+						'</tr>';
+						
+			}
+			
+	//		if(start == data.length){
+	//			count = 0;
+	//			$(".display-data").empty();
+	//			$(".display-data").append("List Traversed. Start over!");
+	//			return;
+	//		}
+			
+	//		count++;
+			$(".display-data").empty();
+			$(".display-data").append(str);
+		})
+		.fail(function() {
+    alert( "error" );
+  })
+	}
+
+</script>
 </html>

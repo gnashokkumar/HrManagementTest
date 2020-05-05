@@ -322,6 +322,32 @@ a {
       background-color:rgb(14, 196, 14);
       color: #000080;
     }
+    
+     .button_hr {
+      background-color: #1e4a6d;
+      /* Green */
+      border: none;
+      border-radius: 5px;
+      color: white;
+      padding: 3px 3px;
+      padding-right: 5%;
+      text-align: left;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 12px;
+      font-family: 'Candara';
+      margin: 2px 2px;
+      transition-duration: 0.4s;
+      cursor: pointer;
+      height: 20px;
+      width: 50px;
+      text-align: center;
+    }
+
+    .button_hr:hover {
+      background-color:rgb(14, 196, 14);
+      color: #000080;
+    }
 
     .columnHeader {
   float: left;

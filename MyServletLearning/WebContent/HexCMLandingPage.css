@@ -25,7 +25,8 @@ td {
 }
 
 tr:nth-child(even) {
-  background-color: #ccccff;
+  background-color: #ebf3fa;
   font-family: "candara";
   font-size: 14px;
+  
 }
