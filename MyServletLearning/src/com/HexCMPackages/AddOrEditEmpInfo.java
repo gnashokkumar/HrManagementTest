@@ -33,7 +33,7 @@ public void doGet (HttpServletRequest req, HttpServletResponse res) throws IOExc
 				System.out.println("Servlet called in Add mode...");
 				
 				JSONObject jsonObj = new JSONObject();
-				String urlToRedirect = "/MyServletLearning/EmpBasicInfo.jsp";
+				String urlToRedirect = "/MyServletLearning/EmpBasicInfo.jsp?AddEditMode=Add";
 				try {
 					jsonObj.put("url",urlToRedirect);
 				} catch (JSONException e) {

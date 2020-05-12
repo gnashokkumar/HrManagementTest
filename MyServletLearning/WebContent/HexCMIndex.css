@@ -132,6 +132,30 @@ a {
       background-color: #45a049;
     }
 
+    input[type=button] {
+      background-color: #4CAF50;
+      color: white;
+      margin: 0;
+      font-family: 'Candara';
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      float: left;
+      margin: 10px;
+    }
+
+
+
+    input[type=button]:hover {
+      background-color: #45a049;
+    }
+    
+    input[type=button]:disabled {
+      background: #ccccb3;
+     /* cursor: default; */
+    }
+
     .container {
       border-radius: 5px;
       background-color: #1e4a6d;
@@ -360,6 +384,25 @@ a {
       background-color:rgb(14, 196, 14);
       color: #000080;
     }
+    
+    .buttonnextcancel {
+      background-color: #4CAF50;
+      color: white;
+      margin: 0;
+      font-family: 'Candara';
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      float: left;
+      margin: 10px;
+    }
+
+
+
+    .buttonnextcancel:hover {
+      background-color: #45a049;
+    }
 
     .columnHeader {
   float: left;
@@ -398,6 +441,11 @@ a {
       color: rgb(14, 196, 14);
       background-color: #10283c;
       box-shadow: 0 4px 8px 0 rgba(0, 1, 1, 0.7);
+    }
+    
+    .buttonHeader:disabled {
+    color: #fcfcfc;
+    
     }
 
     /* .button2:active {

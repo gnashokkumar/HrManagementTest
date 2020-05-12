@@ -8,7 +8,7 @@
 <meta charset="ISO-8859-1">
 <title>HexCM</title>
 </head>
-<body>
+<body onload = "PageMode()">
 	<div class="container">
 
 		<div class="card">
@@ -41,23 +41,23 @@
 			</div>
 
 			<div class="columnHeader">
-				<button class="buttonHeader">Recruitment and Separation</button>
+				<button class="buttonHeader" disabled>Recruitment and Separation</button>
 			</div>
 
 			<div class="columnHeader">
-				<button class="buttonHeader">Benefits Administration</button>
+				<button class="buttonHeader" disabled>Benefits Administration</button>
 			</div>
 
 			<div class="columnHeader">
-				<button class="buttonHeader">Compensation Management</button>
+				<button class="buttonHeader" disabled>Compensation Management</button>
 			</div>
 
 			<div class="columnHeader">
-				<button class="buttonHeader">Performance Management</button>
+				<button class="buttonHeader" disabled>Performance Management</button>
 			</div>
 
 			<div class="columnHeader">
-				<button class="buttonHeader">Workflows and Approvals</button>
+				<button class="buttonHeader" disabled>Workflows and Approvals</button>
 			</div>
 		</div>
 
@@ -90,13 +90,13 @@
           </label>
         </div>
         <div class="col-30">
-          <input type="text" id="fname" name="firstname" placeholder="EE Given name.." required>
+          <input type="text" id="fname" name="firstname" placeholder="EE Given name.." >
         </div>
         <div class="col-15">
           <input type="text" id="mname" name="middlename" placeholder="Middle...">
         </div>
         <div class="col-30">
-          <input type="text" id="lname" name="lastname" placeholder="EE last name.." required>
+          <input type="text" id="lname" name="lastname" placeholder="EE last name.." >
         </div>
 
       </div>
@@ -323,9 +323,9 @@
      
 
         <div class="row">
-          <input type="submit" value="Cancel">
-          <input type="submit" value="Next">
-          <input type="submit" value="Submit">
+          <input type="button"  id = "eeBasicCancel" value="Cancel">
+          <input type="button" id = "eeBasicNext" value="Next">
+          <input type="submit" id = "eeBasicSubmit" value="Submit">
         </div>
 
       </form>
@@ -392,6 +392,8 @@
 	$("#btnAjaxCall").click(function() {
 		fetchDataAndDisplay();
 	});
+	
+	
 
 	function fetchDataAndDisplay() {
 		$
@@ -434,6 +436,27 @@
 						}).fail(function() {
 					alert("error");
 				})
+	}
+	
+	function PageMode() {
+	const queryString = window.location.search;
+	console.log(queryString);
+	const urlParams = new URLSearchParams(queryString);
+	const addEditMode = urlParams.get('AddEditMode')
+	console.log(addEditMode);
+	
+	if (addEditMode == "Add") {
+		document.getElementById("eeBasicNext").setAttribute("disabled","disabled");
+		document.getElementById("eeBasicNext").style.cursor = "default";
+		console.log("Page opened in Add mode...");
+	}
+	else if (addEditMode == "Edit") {
+		document.getElementById("eeBasicSubmit").disable = true;
+		console.log("Page opened in Edit mode...");
+	}
+	else {
+		console.log("Neither Add nor Edit mode...");
+	}
 	}
 </script>
 
