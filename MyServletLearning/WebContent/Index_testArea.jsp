@@ -64,7 +64,31 @@
 		<div class="MainPane" id="EEMasterLandingPage">
 			<p>
 				<font face="Candara">Landing Page</font> </p>
-				
+
+			<div class="row">
+				<div class="col-20">
+					<input type="number" id="emp_id_search" name="emp_id_search"
+						placeholder="EE number.." >
+					
+				</div>
+				<div class="col-20">
+					<input type="text" id="emp_fname_search" name="emp_fname_search"
+						placeholder="EE first name.." >
+				</div>
+				<div class="col-20">
+					<input type="text" id="emp_lname_search" name="emp_lname_search"
+						placeholder="EE last name..">
+				</div>
+				<div class="col-20">
+					<input type="text" id="legal_entity_search" name="legal_entity_search"
+						placeholder="Legal entity.." >
+				</div>
+				<div class="col-20">
+					<input type="date" id="pay_start_date_search" name="pay_start_date_search" >
+				</div>
+
+			</div>
+
 			<p>	
 			
 			<button class="button_hr" id="btnAjaxCall" value="Ajax Call" >Find Employees</button>
@@ -157,9 +181,9 @@
 	<!-- Closing container div tag-->
 </body>
 
-<script src="https://code.jquery.com/jquery-3.1.1.min.js"
-			  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-			  crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" >
+
+			  </script>
 			  
 <script>
 	var count = 0;
@@ -184,7 +208,7 @@
 							'<td>' + data[i].legal_entity + '</td>' +
 							'<td>' + data[i].emp_pay_status + '</td>' +
 							'<td>' + data[i].emp_ben_status + '</td>' +
-							'<td>' + '</td>' +
+							'<td>' + data[i].emp_pay_start_date + '</td>' +
 							'<td>' + data[i].emp_country + '</td>' +
 						'</tr>';
 						

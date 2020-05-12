@@ -43,4 +43,23 @@
 	  <url-pattern>/Logout</url-pattern>
   </servlet-mapping>
   
+    <servlet>
+	  <servlet-name>AddEmpButtonClick</servlet-name>
+	  <servlet-class>com.HexCMPackages.AddOrEditEmpInfo</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	  <servlet-name>AddEmpButtonClick</servlet-name>
+	  <url-pattern>/AddOrEditEmpInfo</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+    <servlet-name>CallEmpBasicAddMode</servlet-name>
+    <jsp-file>/EmpBasicInfo.jsp</jsp-file>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>CallEmpBasicAddMode</servlet-name>
+    <url-pattern>/EmpBasicInfo.jsp</url-pattern>
+</servlet-mapping>
+  
 </web-app>
