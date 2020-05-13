@@ -15,6 +15,15 @@
 	  <url-pattern>/InsertEmployeeBasicInfo</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+	  <servlet-name>EmpContactsInfo</servlet-name>
+	  <servlet-class>com.HexCMPackages.SvtEmpContactsInfo</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	  <servlet-name>EmpContactsInfo</servlet-name>
+	  <url-pattern>/InsertEmployeeContactsInfo</url-pattern>
+  </servlet-mapping>
+  
    <servlet>
 	  <servlet-name>LoginValidate</servlet-name>
 	  <servlet-class>com.HexCMPackages.LoginValidation</servlet-class>

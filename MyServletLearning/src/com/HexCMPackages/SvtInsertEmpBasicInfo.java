@@ -8,6 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.servlet.annotation.*;
 
 public class SvtInsertEmpBasicInfo extends HttpServlet
@@ -20,6 +21,7 @@ public class SvtInsertEmpBasicInfo extends HttpServlet
 	@Override
 	public void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException
 	{
+		String AddEditMode = req.getParameter("AddEditFlag");
 		String EmpFirstName = req.getParameter("firstname");
 		String EmpMiddleName = req.getParameter("middlename");
 		String EmpLastName = req.getParameter("lastname");
@@ -44,24 +46,31 @@ public class SvtInsertEmpBasicInfo extends HttpServlet
 		String EmpStopDate = req.getParameter("paystopdate");
 		String EmpTermDate = req.getParameter("dateterminated");
 		
+		HttpSession session = req.getSession(false);
+		String Session_Id = session.getId();
+		System.out.println("Got Session id : "+ Session_Id);
 		
+		
+		
+	session.setAttribute("io_emp_first_name", EmpFirstName);
+	session.setAttribute("io_emp_id", EmpId);		
+	session.setAttribute("io_emp_middle_name", EmpMiddleName);
+	session.setAttribute("io_emp_last_name", EmpLastName);
+	System.out.println ("Employee middle and last names assigned to session variables..AddEditMode..");
+		
+			
 	      // Set the response message's MIME type
 	      res.setContentType("text/html;charset=UTF-8");
 	      // Allocate a output writer to write the response message into the network socket
 	      PrintWriter out = res.getWriter();
 	      
-	   // Class.forName("com.mysql.jdbc.Driver");
-	      
+	   	      
 			  try(  Connection conn =
 			  DriverManager.getConnection("jdbc:mysql://localhost:3306/employee_mgmt", "Ashok", "Itanium@123");			  
 			  Statement stmt = conn.createStatement(); )
 			  
 			  {
-				//Commenting the following query as there is a bigger statement.  
-//				  String sqlStr =
-//			  "insert into emp_basic_info (emp_id,emp_first_name,emp_mid_name,emp_last_name) values ("
-//			  +EmpId+",'"+EmpFirstName+"','"+EmpMiddleName+"','"+EmpLastName+"');";
-				  
+								  
 				  String sqlStr = "insert into emp_basic_info (emp_id,emp_first_name,"
 				  		+ "emp_mid_name,emp_last_name, legal_entity, division, business_unit, "
 				  		+ "department, emp_country, emp_pay_status, emp_empl_status, emp_ben_status, "
@@ -74,42 +83,51 @@ public class SvtInsertEmpBasicInfo extends HttpServlet
 				  
 			  stmt.executeUpdate(sqlStr);
 			 
-	      	  //dataInsert(EmpId, EmpFirstName, EmpMiddleName, EmpLastName);
+			  if(AddEditMode.equalsIgnoreCase("Add")) {
+					
+					System.out.println("Add mode entered in servelet...");
+					System.out.println("Employee basic info. inserted in add mode...");
+					res.sendRedirect("/MyServletLearning/EmpContactsInfo.jsp?AddEditMode=Add");
+					
+					
+				} else if (AddEditMode.equalsIgnoreCase("Edit")) {
+					
+					System.out.println("Edit mode entered in servelet...");
+					System.out.println("Employee basic info. inserted in Edit mode...");
 	          
-	      	  out.println("<!DOCTYPE html>");
-	          out.println("<html><head>");
-	          out.println("<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>");
-	          out.println("<title>Employee Basic Info Response</title></head>");
-	          out.println("<body>");
-	          out.println("<h1>Employee Basic Information inserted successfully</h1>");  // says Hello
-	          out.println("<p>Employee Number is : "+ EmpId + "</br>");
-	          out.println("Employee's First Name is : "+ EmpFirstName + "</br>");
-	          out.println("Employee's Middle Name is : "+ EmpMiddleName + "</br>");
-	          out.println("Employee's Last Name is : "+ EmpLastName + "</br>");
-	          out.println("Legal Entity is : "+ EmpLegalEntity + "</br>");
-	          out.println("Division is : "+ EmpDivision + "</br>");
-	          out.println("Home BU is : "+ EmpHomeBU + "</br>");
-	          out.println("Department is : "+ EmpDepartment + "</br>");
-	          out.println("Residing Country is : "+ EmpCountry + "</br>");
-	          out.println("Pay Status is : "+ EmpPayStatus + "</br>");
-	          out.println("Employees employment status is : "+ EmpEmpStatus + "</br>");
-	          out.println("Benefit Status is : "+ EmpBenStatus + "</br>");
-	          out.println("Original Hire Date is : "+ EmpOrgHireDate + "</br>");
-	          out.println("Start Date is : "+ EmpStartDate + "</br>");
-	          out.println("Pay Start Date is : "+ EmpPayStartDate + "</br>");
-	          out.println("Resigned Date is : "+ EmpDateResigned + "</br>");
-	          out.println("Pay Stop Date is : "+ EmpStopDate + "</br>");
-	          out.println("Termination Date is : "+ EmpTermDate + "</br></p>");
-	          out.println("<p> <b>Query used :</b> </p>");
-	          out.println("<p>"+sqlStr+"</p>");
-	          out.println("</body>");
-	          out.println("</html>");
+//					out.println("<!DOCTYPE html>");
+//					out.println("<html><head>");
+//					out.println("<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>");
+//					out.println("<title>Employee Basic Info Response</title></head>");
+//					out.println("<body>");
+//					out.println("<h1>Employee Basic Information inserted successfully</h1>"); // says Hello
+//					out.println("<p>Employee Number is : " + EmpId + "</br>");
+//					out.println("Employee's First Name is : " + EmpFirstName + "</br>");
+//					out.println("Employee's Middle Name is : " + EmpMiddleName + "</br>");
+//					out.println("Employee's Last Name is : " + EmpLastName + "</br>");
+//					out.println("Legal Entity is : " + EmpLegalEntity + "</br>");
+//					out.println("Division is : " + EmpDivision + "</br>");
+//					out.println("Home BU is : " + EmpHomeBU + "</br>");
+//					out.println("Department is : " + EmpDepartment + "</br>");
+//					out.println("Residing Country is : " + EmpCountry + "</br>");
+//					out.println("Pay Status is : " + EmpPayStatus + "</br>");
+//					out.println("Employees employment status is : " + EmpEmpStatus + "</br>");
+//					out.println("Benefit Status is : " + EmpBenStatus + "</br>");
+//					out.println("Original Hire Date is : " + EmpOrgHireDate + "</br>");
+//					out.println("Start Date is : " + EmpStartDate + "</br>");
+//					out.println("Pay Start Date is : " + EmpPayStartDate + "</br>");
+//					out.println("Resigned Date is : " + EmpDateResigned + "</br>");
+//					out.println("Pay Stop Date is : " + EmpStopDate + "</br>");
+//					out.println("Termination Date is : " + EmpTermDate + "</br></p>");
+//					out.println("<p> <b>Query used :</b> </p>");
+//					out.println("<p>" + sqlStr + "</p>");
+//					out.println("</body>");
+//					out.println("</html>");
+	          
+				} //closing if condition for add / edit mode
 	          
 	          
-	    	  
-//	    	  out.println("<script type=\"text/javascript\">");  
-//	    	  out.println("alert('Record inserted successfully...');");  
-//	    	  out.println("</script>");
+
 	          
 	       } catch (SQLException e) {
 	    	   e.printStackTrace();
@@ -119,42 +137,16 @@ public class SvtInsertEmpBasicInfo extends HttpServlet
 			out.println("</body>");
 	        out.println("</html>");
 		}
-//			  catch(ClassNotFoundException cnfe) {
-//			cnfe.printStackTrace();
-//				out.println("<html>");
-//				out.println("<body>");
-//				out.println("There is an error in the program - Classnotfound");
-//				out.println("</body>");
-//		        out.println("</html>");
-//		}
 			  
 			  finally {
 	          out.close();  // Always close the output writer
 	       }
+			  
+		 
 	      
-//		System.out.println("Employee Number is"+ EmpId);
-//		System.out.println("Employee First Name is"+ EmpFirstName);
-//		System.out.println("Employee Middle Name is"+ EmpMiddleName);
-//		System.out.println("Employee Last Name is"+ EmpLastName);
 		
 	}
 	
-//	private ResultSet dataInsert(int EmpId, String EmpFirstName, String EmpMiddleName, String EmpLastName) throws SQLException, ClassNotFoundException{
-//
-//			Class.forName("com.mysql.cj.jdbc.Driver");
-//			Connection conn = DriverManager.getConnection(
-//					"jdbc:mysql://localhost:3306/employee_mgmt?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC",
-//					"Ashok", "Itanium@123");
-//
-//			Statement stmt = conn.createStatement();
-//
-//			String sqlStr = "insert into emp_basic_info (emp_id,emp_first_name,emp_mid_name,emp_last_name) values ("
-//					+ EmpId + ",'" + EmpFirstName + "','" + EmpMiddleName + "','" + EmpLastName + "');";
-//			
-//			//stmt.execute(sqlStr);
-//			
-//			ResultSet result = stmt.executeQuery(sqlStr);
-//			return result;
-//	}
+
 
 }

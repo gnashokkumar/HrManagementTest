@@ -61,10 +61,11 @@
 			</div>
 		</div>
 
-		<div class="MainPane" id="EEBasicInfoPanel">
-     <form method="post" action="InsertEmployeeBasicInfo">
+		 <!--Code for employee contacts information pane starts here-->
+    <div class="MainPane" id="EEContactsInfoPanel">
+	<form method="post" action="InsertEmployeeContactsInfo">
       <p>
-        <font face="Candara">Employee Basic Information</font>
+        <font face="Candara">Employee Contacts Information</font>
       </p>
 
       <!-- /* Employee ID */ -->
@@ -76,8 +77,8 @@
           </label>
         </div>
         <div class="col-75">
-          <input type="number" id="EmpNum" name="empnum" placeholder="EE identification number..">
-          <input type="hidden" id="AddEditFlag" name="AddEditFlag" value="">
+          <input type="number" id="EmpNum" name="empnum" value="${io_emp_id}">
+		  <input type="hidden" id="AddEditFlag" name="AddEditFlag" value="">
         </div>
       </div>
 
@@ -91,246 +92,178 @@
           </label>
         </div>
         <div class="col-30">
-          <input type="text" id="fname" name="firstname" placeholder="EE Given name.." >
+          <input type="text" id="fname" name="firstname" value="${io_emp_first_name}">
         </div>
         <div class="col-15">
-          <input type="text" id="mname" name="middlename" placeholder="Middle...">
+          <input type="text" id="mname" name="middlename" value="${io_emp_middle_name}">
         </div>
         <div class="col-30">
-          <input type="text" id="lname" name="lastname" placeholder="EE last name.." >
+          <input type="text" id="lname" name="lastname" value="${io_emp_last_name}">
         </div>
 
       </div>
 
 
 
-      <!-- /* Legal Entity */ -->
+      <!-- /* Cell phone 1 of the Employee */ -->
 
       <div class="row">
         <div class="col-25">
-          <label for="legalentity">
-            <font face="Candara">Legal Entity</font>
+          <label for="empCell01">
+            <font face="Candara">Cell Phone 1 </font>
           </label>
         </div>
         <div class="col-75">
-          <input type="text" id="lentity" name="legalentity" placeholder="Legal entity..." >
+          <input type="number" id="empCell01" name="empCell01" >
         </div>
       </div>
-      <!-- /* Division */ -->
+
+      <!-- /* Cell phone 2 of the Employee */ -->
 
       <div class="row">
         <div class="col-25">
-          <label for="bu">
-            <font face="Candara">Division</font>
+          <label for="empCell02">
+            <font face="Candara">Cell Phone 2 </font>
           </label>
         </div>
         <div class="col-75">
-          <input type="text" id="division" name="division" placeholder="Division">
+          <input type="number" id="empCell02" name="empCell02" >
         </div>
       </div>
-
-      <!-- /* Business Unit */ -->
+      
+      <!-- /* Home phone 1 of the Employee */ -->
 
       <div class="row">
         <div class="col-25">
-          <label for="bu">
-            <font face="Candara">Business Unit</font>
+          <label for="homePhone01">
+            <font face="Candara">Home Phone 1 </font>
           </label>
         </div>
         <div class="col-75">
-          <input type="text" id="bu01" name="businessunit" placeholder="Business Unit.." >
+          <input type="number" id="homePhone01" name="homePhone01" >
         </div>
       </div>
-
-      <!-- /* Department */ -->
+      
+      <!-- /* Home phone 2 of the Employee */ -->
 
       <div class="row">
         <div class="col-25">
-          <label for="department">
-            <font face="Candara">Department</font>
+          <label for="homePhone02">
+            <font face="Candara">Home Phone 2 </font>
           </label>
         </div>
         <div class="col-75">
-          <input type="text" id="dept" name="department" placeholder="EE department.." >
+          <input type="number" id="homePhone02" name="homePhone02" >
         </div>
       </div>
-
-      <!-- /* Country of employment */ -->
+      
+      <!-- /* Desk phone 1 of the Employee */ -->
 
       <div class="row">
         <div class="col-25">
-          <label for="country">
-            <font face="Candara">Country</font>
+          <label for="deskPhone01">
+            <font face="Candara">Home Phone 2 </font>
           </label>
         </div>
         <div class="col-75">
-          <select id="country" name="country" >
-            <option value="India">India</option>
-            <option value="Australia">Australia</option>
-            <option value="Canada">Canada</option>
-            <option value="USA">USA</option>
-          </select>
+          <input type="number" id="deskPhone01" name="deskPhone01" >
         </div>
       </div>
-      <!--Status Labels-->
+      
+      <!-- /* Emergency contacts of the Employee */ -->
       <div class="row">
         <div class="col-25">
-
-        </div>
-        <div class="col-25">
-          <label for="employeepaystatus">
-            <font face="Candara">Pay Status </font>
-          </label>
-
-        </div>
-        <div class="col-25">
-          <label for="eeemploymentstatus">
-            <font face="Candara">Employment Status </font>
+          <label for="emergencycontact01">
+            <font face="Candara">Emergency contact 1 </font>
           </label>
         </div>
         <div class="col-25">
-          <label for="eebenstatus">
-            <font face="Candara">Benefit Status </font>
-          </label>
-        </div>
-
-      </div>
-      <!-- /* Employee statuses */ -->
-      <div class="row">
-        <div class="col-25">
-          <label for="eepaystatus">
-            <font face="Candara">Employee Statuses </font>
-          </label>
+          <input type="text" id="emergencyContact01_name" name="emergencyContact01_name" placeholder="Contact Name...">
         </div>
         <div class="col-25">
-          <select id="paystatus" name="paystatus">
-            <option value="Active">Active</option>
-            <option value="Longleave">Long Leave</option>
-            <option value="Inactive">Inactive</option>
-            <option value="Waitinglastcheck">Waiting Last Check</option>
-            <option value="Terminated">Terminated</option>
-          </select>
-
+          <input type="text" id="emergencyContact01_relation" name="emergencyContact01_relation" placeholder="Relation...">
         </div>
         <div class="col-25">
-          <select id="employmentstatus" name="employmentstatus">
-            <option value="Fulltime">Full Time</option>
-            <option value="Parttime">Part Time</option>
-            <option value="Contractor">Contractor</option>
-            <option value="Contractortohire">Contractor to Hire</option>
-            <option value="Probationary">Probationary</option>
-            <option value="Intern">Intern</option>
-          </select>
-        </div>
-        <div class="col-25">
-          <select id="benefitstatus" name="benefitstatus">
-            <option value="Active">Active</option>
-            <option value="Inactive">Inactive</option>
-            <option value="Nobenefit">No Benefits</option>
-          </select>
-        </div>
-
-      </div>
-
-      <!--Start date Labels-->
-      <div class="row">
-        <div class="col-25">
-
-        </div>
-        <div class="col-25">
-          <label for="originalhiredate">
-            <font face="Candara">Original Hire Date </font>
-          </label>
-
-        </div>
-        <div class="col-25">
-          <label for="startdate">
-            <font face="Candara">Start Date </font>
-          </label>
-        </div>
-        <div class="col-25">
-          <label for="paystartdate">
-            <font face="Candara">Pay Start Date </font>
-          </label>
-        </div>
-      </div>
-
-      <!-- /* Start dates */ -->
-
-
-      <div class="row">
-        <div class="col-25">
-          <label for="startdates">
-            <font face="Candara">Start Dates </font>
-          </label>
-        </div>
-        <div class="col-25">
-          <input type="date" id="originalhiredate" name="originalhiredate" placeholder="Oiginal Hire Date.." >
-        </div>
-        <div class="col-25">
-          <input type="date" id="startdate" name="startdate" placeholder="Start Date.." >
-        </div>
-        <div class="col-25">
-          <input type="date" id="paystartdate" name="paystartdate" placeholder="Pay Start Date.." >
-        </div>
-
-      </div>
-
-      <!--Stop date Labels-->
-      <div class="row">
-        <div class="col-25">
-
-        </div>
-        <div class="col-25">
-          <label for="dateresigned">
-            <font face="Candara">Date Resigned </font>
-          </label>
-
-        </div>
-        <div class="col-25">
-          <label for="paystopdate">
-            <font face="Candara">Pay Stop Date </font>
-          </label>
-        </div>
-        <div class="col-25">
-          <label for="datetermminated">
-            <font face="Candara">Date Terminated </font>
-          </label>
-        </div>
-      </div>
-
-      <!-- /* Stop dates */ -->
-
-
-      <div class="row">
-        <div class="col-25">
-          <label for="stopdates">
-            <font face="Candara">Stop Dates </font>
-          </label>
-        </div>
-        <div class="col-25">
-          <input type="date" id="dateresigned" name="dateresigned" placeholder="Date Resigned..">
-        </div>
-        <div class="col-25">
-          <input type="date" id="paystopdate" name="paystopdate" placeholder="Pay Stop Date..">
-        </div>
-        <div class="col-25">
-          <input type="date" id="dateterminated" name="dateterminated" placeholder="Date Terminated..">
+          <input type="number" id="emergencyContact01_number" name="emergencyContact01_number" >
         </div>
 
       </div>
       
-      </br>
-     
-
-        <div class="row">
-          <input type="button"  id = "eeBasicCancel" value="Cancel">
-          <input type="submit" id = "eeBasicNext" value="Next" >
-          <input type="submit" id = "eeBasicSubmit" value="Submit">
+      <div class="row">
+        <div class="col-25">
+          <label for="emergencycontact02">
+            <font face="Candara">Emergency contact 2 </font>
+          </label>
+        </div>
+        <div class="col-25">
+          <input type="text" id="emergencyContact02_name" name="emergencyContact02_name" placeholder="Contact Name...">
+        </div>
+        <div class="col-25">
+          <input type="text" id="emergencyContact02_relation" name="emergencyContact02_relation" placeholder="Relation...">
+        </div>
+        <div class="col-25">
+          <input type="number" id="emergencyContact02_number" name="emergencyContact02_number" >
         </div>
 
+      </div>
+      
+       <!-- /* Email info of the Employee */ -->
+       
+       <div class="row">
+        <div class="col-25">
+          <label for="officialEmailId">
+            <font face="Candara">Official e-mail</font>
+          </label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="officialEmailId" name="officialEmailId" >
+        </div>
+      </div>
+      
+      
+
+      <div class="row">
+        <div class="col-25">
+          <label for="personalEmail_primary">
+            <font face="Candara">Personal e-mail primary </font>
+          </label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="personalEmail_primary" name="personalEmail_primary" >
+        </div>
+      </div>
+      
+       <div class="row">
+        <div class="col-25">
+          <label for="personalEmail_secondary">
+            <font face="Candara">Personal e-mail secondary </font>
+          </label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="personalEmail_secondary" name="personalEmail_secondary" >
+        </div>
+      </div>
+      
+
+      
+      </br>
+      
+
+
+        <div class="row">
+          <div class="row">
+          <input type="button" id = "eeContactsCancel" value="Cancel">
+          <input type="submit" id = "eeContactsNext" value="Next" >
+          <input type="submit" id = "eeContactsSubmit" value="Submit">
+        </div>
+        </div>
+
+
+
       </form>
+
     </div> <!-- Closing Main Pane div tag-->
+    <!--Code for employee contacts information pane ends here-->
 
 
 
@@ -338,9 +271,9 @@
 			<p>
 				<font face="Candara"><b>Employee Master</b></font>
 			</p>
-			<button class="button buttonselected" onclick="showEEBasicInfo();">EE
+			<button class="button button1" onclick="showEEBasicInfo();">EE
 				Basic Info.</button>
-			<button class="button button1" onclick="showEEContactsInfo();">EE
+			<button class="button buttonselected" onclick="showEEContactsInfo();">EE
 				Contact Info.</button>
 			<button class="button button1" onclick="showEEPersonalInfo();">EE
 				Personal Info.</button>
@@ -390,7 +323,7 @@
 <script>
 	var count = 0;
 
-	$("#btnAjaxCall").click(function() {
+	/* $("#btnAjaxCall").click(function() {
 		fetchDataAndDisplay();
 	});
 	
@@ -437,7 +370,7 @@
 						}).fail(function() {
 					alert("error");
 				})
-	}
+	} */
 	
 	function PageMode() {
 	const queryString = window.location.search;
@@ -445,16 +378,20 @@
 	const urlParams = new URLSearchParams(queryString);
 	const addEditMode = urlParams.get('AddEditMode')
 	console.log(addEditMode);
+	document.getElementById("EmpNum").setAttribute("disabled","disabled");
+	document.getElementById("fname").setAttribute("disabled","disabled");
+	document.getElementById("mname").setAttribute("disabled","disabled");
+	document.getElementById("lname").setAttribute("disabled","disabled");
 	
 	if (addEditMode == "Add") {
-		document.getElementById("eeBasicSubmit").setAttribute("disabled","disabled");
-		document.getElementById("eeBasicSubmit").style.cursor = "default";
+		document.getElementById("eeContactsSubmit").setAttribute("disabled","disabled");
+		document.getElementById("eeContactsSubmit").style.cursor = "default";
 		document.getElementById("AddEditFlag").setAttribute("value","Add");
 		console.log("Page opened in Add mode...");
 	}
 	else if (addEditMode == "Edit") {
-		document.getElementById("eeBasicNext").setAttribute("disabled","disabled");
-		document.getElementById("eeBasicNext").style.cursor = "default";
+		document.getElementById("eeContactsNext").setAttribute("disabled","disabled");
+		document.getElementById("eeContactsNext").style.cursor = "default";
 		document.getElementById("AddEditFlag").setAttribute("value","Edit");
 		//document.getElementById("eeBasicSubmit").disable = true;
 		console.log("Page opened in Edit mode...");
