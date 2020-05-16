@@ -105,6 +105,7 @@
 				
 				<button class="button_hr" id="EditEmployeeButton" value="EditEmployeeButton">Edit Employee Info.</button>
 				
+				<button class="button_hr" id="DeleteEmployeeButton" name="DeleteEmployeeButton" value="DeleteEmployeeButton">Delete Employee rec.</button>
 				
 				</span>
 
@@ -210,7 +211,7 @@
 							//		var start = count > 0 ? 5 * count : count;
 							//		var end = start + 5;
 							var str = '';
-							for (var i = 0; i < data.length; i++) {
+							for (var i = 0; i < data.length; i++) {  //replaced data.length with 24 to display a max of 25 rows 
 								str += '<tr>'
 										+ '<td><input type="radio" name="EmployeeGrid"> </input></td>'
 										+ '<td>' + data[i].emp_id + '</td>'

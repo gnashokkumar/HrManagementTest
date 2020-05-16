@@ -9,7 +9,7 @@ table {
 
 th {
   text-align: left;
-  padding: 16px;
+  padding: 10px;
   background-color: #1e4a6d;
   color: #f2f2f2;
   font-family: "candara";
@@ -18,9 +18,10 @@ th {
 
 td {
   text-align: left;
-  padding: 16px;
+  padding: 3px;
   font-family: "candara";
   font-size: 14px;
+  height:15px;
   
 }
 

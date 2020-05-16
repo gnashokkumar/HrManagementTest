@@ -106,7 +106,7 @@ public class SvtEmpContactsInfo extends HttpServlet {
 					
 					System.out.println("Add mode entered in Emp Contacts servelet...");
 					System.out.println("Employee contacts info. inserted in add mode...");
-				//	res.sendRedirect("/MyServletLearning/EmpPersonalInfo.jsp?AddEditMode=Add");
+					res.sendRedirect("/MyServletLearning/EmpPersonalInfo.jsp?AddEditMode=Add");
 					
 					
 				} else if (AddEditMode.equalsIgnoreCase("Edit")) {

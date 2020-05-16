@@ -24,6 +24,33 @@
 	  <url-pattern>/InsertEmployeeContactsInfo</url-pattern>
   </servlet-mapping>
   
+    <servlet>
+	  <servlet-name>EmpPersonalInfo</servlet-name>
+	  <servlet-class>com.HexCMPackages.SvtEmpPersonalInfo</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	  <servlet-name>EmpPersonalInfo</servlet-name>
+	  <url-pattern>/InsertEmployeePersonalInfo</url-pattern>
+  </servlet-mapping>
+  
+      <servlet>
+	  <servlet-name>EmpCompensationInfo</servlet-name>
+	  <servlet-class>com.HexCMPackages.SvtEmpCompensationInfo</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	  <servlet-name>EmpCompensationInfo</servlet-name>
+	  <url-pattern>/InsertEmployeeCompensationInfo</url-pattern>
+  </servlet-mapping>
+  
+        <servlet>
+	  <servlet-name>EmpOrganizationInfo</servlet-name>
+	  <servlet-class>com.HexCMPackages.SvtEmpOrganizationInfo</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	  <servlet-name>EmpOrganizationInfo</servlet-name>
+	  <url-pattern>/InsertEmployeeOrganizationInfo</url-pattern>
+  </servlet-mapping>
+  
    <servlet>
 	  <servlet-name>LoginValidate</servlet-name>
 	  <servlet-class>com.HexCMPackages.LoginValidation</servlet-class>
