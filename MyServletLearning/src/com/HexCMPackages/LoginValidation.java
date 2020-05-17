@@ -38,7 +38,7 @@ public class LoginValidation extends HttpServlet {
 //			String loginvalidate = (String)LoginValidateQuery;
 			System.out.println("Generated query = " + LoginValidateQuery.toString());
 			System.out.println("Query Results: " + ruleset.toString());
-			
+
 //			System.out.println("Query Results: " + Result.toString());
 
 			if (!ruleset.next()) { // empty ResultSet
@@ -47,40 +47,39 @@ public class LoginValidation extends HttpServlet {
 				req.getRequestDispatcher("Login.jsp").forward(req, res);
 
 			} else {
-				
+
 				String emp_role = ruleset.getString("role");
 				int emp_id = ruleset.getInt("emp_id");
 
 				System.out.println("Userid = " + userName + "; Password = " + userPassword);
 				System.out.println("Generated query = " + LoginValidateQuery.toString());
-				
+
 				System.out.println("Login request accepted.");
 				String GetEmpName = "select emp_first_name from emp_basic_info where emp_id=" + emp_id + ";";
 				System.out.println("Query to employee name : " + GetEmpName);
 				ResultSet GetNameSet = stmt.executeQuery(GetEmpName);
-				System.out.println("GetNameSet.getRow():before::"+GetNameSet.getRow());
+				System.out.println("GetNameSet.getRow():before::" + GetNameSet.getRow());
 				GetNameSet.next();
-				System.out.println("GetNameSet.getRow():after::"+GetNameSet.getRow());
+				System.out.println("GetNameSet.getRow():after::" + GetNameSet.getRow());
 				String Emp_First_Name = GetNameSet.getString("emp_first_name");
 //
 				System.out.println("Employee First Name = " + Emp_First_Name);
-				
+
 				HttpSession session = req.getSession(false);
 				String Session_Id = session.getId();
-				if (session !=null) {
+				if (session != null) {
 					session.invalidate();
 				}
 				session = req.getSession(true);
-				System.out.println("Session created : "+ Session_Id);
-				
+				System.out.println("Session created : " + Session_Id);
+
 				synchronized (session) {
 					session.setAttribute("emp_first_name", Emp_First_Name);
-					session.setAttribute("emp_role",emp_role);
+					session.setAttribute("emp_role", emp_role);
 					session.setAttribute("emp_id", emp_id);
-					
-					
+
 					res.sendRedirect("/MyServletLearning/Index.jsp");
-					
+
 //					RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp");
 //			        dispatcher.forward(req, res);
 				}
@@ -94,7 +93,7 @@ public class LoginValidation extends HttpServlet {
 			System.out.println("Catch section entered");
 
 		} finally {
-		//	System.out.println("Session id is: "+ Session_Id);
+			// System.out.println("Session id is: "+ Session_Id);
 		}
 
 	}
