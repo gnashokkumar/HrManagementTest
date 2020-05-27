@@ -90,26 +90,28 @@
 
 			</div>
 
-			
 
-				
-		<span>		<button class="button_hr" id="btnAjaxCall" value="Ajax Call">Find
-					Employees</button> 
-				
 
-				<!-- 	<input type="number" name="emp_id_search" placeholder="EE number"/>   -->
-		
-				<button class="button_hr" id="AddEmployeeButton" value="AddEmployeeButton">Add Employee</button>
-	
-				
-				
-				<button class="button_hr" id="EditEmployeeButton" value="EditEmployeeButton">Edit Employee Info.</button>
-				
-				<button class="button_hr" id="DeleteEmployeeButton" name="DeleteEmployeeButton" value="DeleteEmployeeButton">Delete Employee rec.</button>
-				
-				</span>
 
-			
+			<span>
+				<button class="button_hr" id="btnAjaxCall" value="Ajax Call">Find
+					Employees</button> <!-- 	<input type="number" name="emp_id_search" placeholder="EE number"/>   -->
+
+				<button class="button_hr" id="AddEmployeeButton"
+					value="AddEmployeeButton">Add Employee</button>
+
+
+
+				<button class="button_hr" id="EditEmployeeButton"
+					value="EditEmployeeButton">Edit Employee Info.</button>
+
+				<button class="button_hr" id="DeleteEmployeeButton"
+					name="DeleteEmployeeButton" value="DeleteEmployeeButton">Delete
+					Employee rec.</button>
+
+			</span>
+
+
 
 			<table>
 				<thead>
